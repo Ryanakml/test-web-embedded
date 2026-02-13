@@ -1,0 +1,1527 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UrbanStride - Premium Footwear for the Modern Professional</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap");
+
+      :root {
+        --cream: #faf7f2;
+        --warm-gray: #e8e3db;
+        --charcoal: #2b2b2b;
+        --deep-brown: #4a3d35;
+        --terracotta: #c85a3e;
+        --sage: #a8b5a0;
+        --gold: #d4a574;
+        --off-white: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Work Sans", sans-serif;
+        background-color: var(--cream);
+        color: var(--charcoal);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      h1 {
+        font-size: 4.5rem;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: 3rem;
+        letter-spacing: -0.01em;
+      }
+      h3 {
+        font-size: 1.8rem;
+      }
+      h4 {
+        font-size: 1.4rem;
+      }
+
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(250, 247, 242, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(43, 43, 43, 0.1);
+        animation: slideDown 0.6s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.5rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: var(--charcoal);
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--deep-brown);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        transition: color 0.3s ease;
+        cursor: pointer;
+      }
+
+      .nav-links a:hover {
+        color: var(--terracotta);
+      }
+
+      /* Hero Section */
+      .hero {
+        margin-top: 5rem;
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .hero-text {
+        animation: fadeInLeft 1s ease-out;
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .hero-text h1 {
+        margin-bottom: 1.5rem;
+        color: var(--charcoal);
+      }
+
+      .hero-text p {
+        font-size: 1.1rem;
+        color: var(--deep-brown);
+        margin-bottom: 2.5rem;
+        max-width: 500px;
+        line-height: 1.8;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: var(--terracotta);
+        color: var(--off-white);
+        padding: 1rem 2.5rem;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        transition: all 0.3s ease;
+        border: 2px solid var(--terracotta);
+        cursor: pointer;
+      }
+
+      .cta-button:hover {
+        background: transparent;
+        color: var(--terracotta);
+        transform: translateY(-2px);
+      }
+
+      .hero-image {
+        position: relative;
+        animation: fadeInRight 1s ease-out;
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .hero-image-placeholder {
+        width: 100%;
+        height: 600px;
+        background: linear-gradient(
+          135deg,
+          var(--warm-gray) 0%,
+          var(--sage) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3rem;
+        color: rgba(43, 43, 43, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-image-placeholder::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.2) 0%,
+          transparent 70%
+        );
+      }
+
+      /* Section Styles */
+      section {
+        padding: 6rem 3rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        display: none;
+      }
+
+      section.active {
+        display: block;
+        animation: fadeIn 0.5s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Products Grid */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .product-card {
+        background: var(--off-white);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(
+          135deg,
+          var(--warm-gray) 0%,
+          var(--gold) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        color: rgba(43, 43, 43, 0.3);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .product-image::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.05), transparent);
+      }
+
+      .product-info {
+        padding: 2rem;
+      }
+
+      .product-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        color: var(--charcoal);
+      }
+
+      .product-category {
+        font-size: 0.9rem;
+        color: var(--deep-brown);
+        opacity: 0.7;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .product-price {
+        font-size: 1.3rem;
+        color: var(--terracotta);
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .product-description {
+        font-size: 0.95rem;
+        color: var(--deep-brown);
+        line-height: 1.7;
+      }
+
+      /* Product Detail Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 2000;
+        overflow-y: auto;
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      .modal.active {
+        display: block;
+      }
+
+      .modal-content {
+        background: var(--cream);
+        max-width: 1200px;
+        margin: 3rem auto;
+        position: relative;
+        animation: slideUp 0.4s ease-out;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: var(--charcoal);
+        cursor: pointer;
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+      }
+
+      .close-modal:hover {
+        transform: rotate(90deg);
+      }
+
+      .modal-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+
+      .modal-image {
+        background: linear-gradient(
+          135deg,
+          var(--warm-gray) 0%,
+          var(--gold) 100%
+        );
+        height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3rem;
+        color: rgba(43, 43, 43, 0.3);
+      }
+
+      .modal-details {
+        padding: 4rem;
+        overflow-y: auto;
+        max-height: 700px;
+      }
+
+      .modal-details h2 {
+        margin-bottom: 0.5rem;
+      }
+
+      .modal-details .product-category {
+        margin-bottom: 1.5rem;
+      }
+
+      .modal-details .product-price {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .specs-section {
+        margin-top: 2.5rem;
+        border-top: 1px solid var(--warm-gray);
+        padding-top: 2rem;
+      }
+
+      .specs-section h4 {
+        margin-bottom: 1rem;
+        font-family: "Work Sans", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.9rem;
+        color: var(--deep-brown);
+      }
+
+      .spec-item {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        margin-bottom: 0.8rem;
+        font-size: 0.95rem;
+      }
+
+      .spec-label {
+        font-weight: 500;
+        color: var(--deep-brown);
+      }
+
+      .spec-value {
+        color: var(--charcoal);
+      }
+
+      .care-instructions {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: var(--off-white);
+      }
+
+      .care-instructions h4 {
+        margin-bottom: 1rem;
+      }
+
+      .care-instructions ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .care-instructions li {
+        padding-left: 1.5rem;
+        position: relative;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--deep-brown);
+      }
+
+      .care-instructions li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--terracotta);
+      }
+
+      /* Story Section */
+      .story-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .story-content h2 {
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .story-text {
+        font-size: 1.1rem;
+        line-height: 2;
+        color: var(--deep-brown);
+        margin-bottom: 2rem;
+      }
+
+      .story-highlight {
+        background: var(--off-white);
+        padding: 3rem;
+        margin: 3rem 0;
+        border-left: 4px solid var(--terracotta);
+      }
+
+      .story-highlight h3 {
+        margin-bottom: 1rem;
+      }
+
+      /* FAQ Section */
+      .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid var(--warm-gray);
+        padding-bottom: 1.5rem;
+      }
+
+      .faq-question {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: var(--charcoal);
+      }
+
+      .faq-answer {
+        color: var(--deep-brown);
+        line-height: 1.8;
+      }
+
+      /* Policy Sections */
+      .policy-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .policy-content h2 {
+        margin-bottom: 2rem;
+      }
+
+      .policy-content h3 {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        font-family: "Work Sans", sans-serif;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .policy-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        color: var(--deep-brown);
+      }
+
+      .policy-content ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 2rem;
+      }
+
+      .policy-content li {
+        padding-left: 2rem;
+        position: relative;
+        margin-bottom: 1rem;
+        color: var(--deep-brown);
+      }
+
+      .policy-content li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--terracotta);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--charcoal);
+        color: var(--warm-gray);
+        padding: 4rem 3rem 2rem;
+        margin-top: 6rem;
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-brand h3 {
+        font-family: "Cormorant Garamond", serif;
+        color: var(--off-white);
+        margin-bottom: 1rem;
+      }
+
+      .footer-brand p {
+        color: var(--warm-gray);
+        line-height: 1.8;
+      }
+
+      .footer-section h4 {
+        color: var(--off-white);
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        font-family: "Work Sans", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section a {
+        color: var(--warm-gray);
+        text-decoration: none;
+        line-height: 2.2;
+        display: block;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: var(--gold);
+      }
+
+      .footer-bottom {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(232, 227, 219, 0.2);
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--warm-gray);
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        h1 {
+          font-size: 3rem;
+        }
+        h2 {
+          font-size: 2.2rem;
+        }
+
+        .hero-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .hero-image-placeholder {
+          height: 400px;
+        }
+
+        .modal-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .modal-image {
+          height: 400px;
+        }
+
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#" class="logo" onclick="showSection('home')">UrbanStride</a>
+        <ul class="nav-links">
+          <li><a onclick="showSection('home')">Home</a></li>
+          <li><a onclick="showSection('products')">Products</a></li>
+          <li><a onclick="showSection('story')">Our Story</a></li>
+          <li><a onclick="showSection('faq')">FAQ</a></li>
+          <li><a onclick="showSection('shipping')">Shipping</a></li>
+          <li><a onclick="showSection('returns')">Returns</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="active">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Stride with Purpose</h1>
+            <p>
+              Meticulously crafted footwear that bridges the gap between
+              timeless design and contemporary comfort. For those who demand
+              more from every step.
+            </p>
+            <a href="#" class="cta-button" onclick="showSection('products')"
+              >Explore Collection</a
+            >
+          </div>
+          <div class="hero-image">
+            <div class="hero-image-placeholder">Premium Craftsmanship</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+      <h2 style="margin-bottom: 3rem; text-align: center">Our Collection</h2>
+      <div class="products-grid">
+        <div class="product-card" onclick="showProductDetail(0)">
+          <div class="product-image">Meridian</div>
+          <div class="product-info">
+            <h3 class="product-name">The Meridian</h3>
+            <p class="product-category">Oxford Derby</p>
+            <p class="product-price">$289.00</p>
+            <p class="product-description">
+              Full-grain Italian leather oxford with a contemporary silhouette.
+              Perfect for the boardroom and beyond.
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="showProductDetail(1)">
+          <div class="product-image">Atlas</div>
+          <div class="product-info">
+            <h3 class="product-name">The Atlas</h3>
+            <p class="product-category">Minimalist Sneaker</p>
+            <p class="product-price">$198.00</p>
+            <p class="product-description">
+              Clean-lined sneaker in premium canvas and leather. Versatility
+              meets understated elegance.
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="showProductDetail(2)">
+          <div class="product-image">Venture</div>
+          <div class="product-info">
+            <h3 class="product-name">The Venture</h3>
+            <p class="product-category">Chelsea Boot</p>
+            <p class="product-price">$345.00</p>
+            <p class="product-description">
+              Refined chelsea boot in supple suede. Goodyear-welted construction
+              for exceptional durability.
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="showProductDetail(3)">
+          <div class="product-image">Tempo</div>
+          <div class="product-info">
+            <h3 class="product-name">The Tempo</h3>
+            <p class="product-category">Sport Trainer</p>
+            <p class="price">$225.00</p>
+            <p class="product-description">
+              Performance-driven trainer with memory foam insole and breathable
+              mesh construction.
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="showProductDetail(4)">
+          <div class="product-image">Nomad</div>
+          <div class="product-info">
+            <h3 class="product-name">The Nomad</h3>
+            <p class="product-category">Desert Boot</p>
+            <p class="product-price">$265.00</p>
+            <p class="product-description">
+              Burnished leather desert boot with Vibram sole. Built for urban
+              exploration and weekend adventures.
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="showProductDetail(5)">
+          <div class="product-image">Horizon</div>
+          <div class="product-info">
+            <h3 class="product-name">The Horizon</h3>
+            <p class="product-category">Slip-On Loafer</p>
+            <p class="product-price">$255.00</p>
+            <p class="product-description">
+              Contemporary loafer in butter-soft calfskin. Elevated comfort for
+              the modern professional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story">
+      <div class="story-content">
+        <h2>The UrbanStride Story</h2>
+
+        <p class="story-text">
+          Founded in 2018 in Portland, Oregon, UrbanStride emerged from a simple
+          observation: modern professionals deserved footwear that didn't
+          compromise. We watched as people shuffled between dress shoes that
+          pinched and sneakers that looked sloppy, sacrificing either comfort or
+          credibility with each step.
+        </p>
+
+        <p class="story-text">
+          Our founders, Maria Chen and David Kowalski, spent eighteen months
+          traveling between artisan workshops in Italy, studying biomechanics
+          labs in Germany, and collaborating with material scientists in Japan.
+          The goal was singular: create footwear that performed as beautifully
+          as it looked.
+        </p>
+
+        <div class="story-highlight">
+          <h3>Our Philosophy</h3>
+          <p class="story-text">
+            Every UrbanStride shoe begins with a question: What if we didn't
+            have to choose? What if comfort and style, durability and elegance,
+            tradition and innovation could coexist in every step?
+          </p>
+        </div>
+
+        <p class="story-text">
+          We source materials from the world's finest tanneries—full-grain
+          leathers from Tuscany, premium suedes from Portugal, and technical
+          fabrics from Japanese mills. Each component is selected not just for
+          its aesthetic appeal, but for its performance characteristics and
+          environmental footprint.
+        </p>
+
+        <p class="story-text">
+          Our construction methods blend centuries-old techniques with
+          contemporary innovation. Goodyear welting ensures our boots can be
+          resoled for years of wear. Memory foam insoles adapt to your unique
+          gait. Water-resistant treatments protect against the elements without
+          compromising breathability.
+        </p>
+
+        <p class="story-text">
+          Today, UrbanStride serves professionals across 28 countries who refuse
+          to accept mediocrity in any aspect of their lives. From boardrooms in
+          Singapore to cobblestones in Stockholm, our shoes carry people who
+          stride with purpose.
+        </p>
+
+        <div class="story-highlight">
+          <h3>Sustainability Commitment</h3>
+          <p class="story-text">
+            We believe great shoes should leave light footprints. Our
+            vegetable-tanned leathers minimize chemical waste. Our packaging is
+            100% recyclable. And our construction methods prioritize
+            longevity—every shoe we make is designed to be repaired, not
+            replaced.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <div class="faq-container">
+        <h2 style="margin-bottom: 3rem; text-align: center">
+          Frequently Asked Questions
+        </h2>
+
+        <div class="faq-item">
+          <h3 class="faq-question">How do UrbanStride shoes fit?</h3>
+          <p class="faq-answer">
+            Our shoes are designed to fit true to size based on US sizing
+            standards. We recommend ordering your standard dress shoe size for
+            our oxfords, derbies, and loafers. For our sneakers and trainers,
+            most customers prefer their athletic shoe size. If you're between
+            sizes, we suggest sizing up for leather styles (they'll mold to your
+            foot) and down for sneakers. Each product page includes specific
+            sizing notes based on that style's last.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">What is your shipping policy?</h3>
+          <p class="faq-answer">
+            We offer free standard shipping on all US orders over $200. Standard
+            shipping takes 3-5 business days. Express shipping (1-2 business
+            days) is available for $25. International shipping is available to
+            select countries, with rates calculated at checkout. All orders are
+            processed within 1 business day and ship from our Portland facility.
+            You'll receive tracking information via email once your order ships.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">What is your return policy?</h3>
+          <p class="faq-answer">
+            We offer a 60-day return window for unworn shoes in original
+            condition with all tags attached. Returns are free for US
+            customers—simply use the prepaid return label included in your
+            package. Shoes must show no signs of wear (we recommend trying them
+            on carpeted surfaces only). Once we receive and inspect your return,
+            refunds are processed within 3-5 business days to your original
+            payment method.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Do you offer a warranty?</h3>
+          <p class="faq-answer">
+            Yes. Every UrbanStride shoe is covered by our Craftsmanship
+            Guarantee. We warrant against defects in materials and workmanship
+            for one year from purchase date. This covers issues like sole
+            separation, stitching failures, or material defects under normal
+            wear conditions. Normal wear and tear, damage from improper care, or
+            modifications are not covered. To initiate a warranty claim, email
+            photos and your order number to warranty@urbanstride.com.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">
+            Can I exchange my shoes for a different size?
+          </h3>
+          <p class="faq-answer">
+            Absolutely. We want you to love your UrbanStride shoes. If the size
+            isn't quite right, initiate a return through your account and place
+            a new order for your preferred size. To ensure you get your new size
+            quickly, we recommend placing the new order first, then returning
+            the original pair. If you need sizing assistance, our customer
+            service team is available via email or chat to help you find your
+            perfect fit.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">How should I care for my shoes?</h3>
+          <p class="faq-answer">
+            Proper care extends the life of your shoes significantly. For
+            leather: Use a horsehair brush after each wear to remove dirt. Apply
+            leather conditioner every 4-6 weeks. For suede: Brush with a suede
+            brush and use a suede protector spray. For all shoes: Use cedar shoe
+            trees when not wearing to maintain shape and absorb moisture. Avoid
+            wearing the same pair consecutive days—leather needs 24 hours to dry
+            between wears. Detailed care instructions are included with each
+            purchase.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Are UrbanStride shoes waterproof?</h3>
+          <p class="faq-answer">
+            Our shoes are water-resistant but not waterproof. Most styles
+            feature water-resistant treatments that protect against light rain
+            and splashes. Our desert boots and chelsea boots offer enhanced
+            water resistance. However, we don't recommend submerging any of our
+            shoes in water or wearing them in heavy rain without additional
+            protection. If your shoes do get wet, stuff them with newspaper and
+            let them dry naturally at room temperature—never use direct heat
+            sources.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Do you offer corporate or bulk orders?</h3>
+          <p class="faq-answer">
+            Yes, we work with companies seeking premium footwear for employee
+            gifts, uniforms, or corporate events. Bulk orders of 10+ pairs
+            qualify for volume pricing. We can also arrange custom sizing
+            sessions and offer coordinated delivery. For corporate inquiries,
+            please email corporate@urbanstride.com with your requirements, and
+            our team will create a custom proposal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shipping Policy -->
+    <section id="shipping">
+      <div class="policy-content">
+        <h2>Shipping Policy</h2>
+
+        <h3>Domestic Shipping (United States)</h3>
+        <p>We offer two shipping options for all US orders:</p>
+        <ul>
+          <li>
+            <strong>Standard Shipping (3-5 business days):</strong> Free on
+            orders over $200, $12 on orders under $200
+          </li>
+          <li>
+            <strong>Express Shipping (1-2 business days):</strong> $25 flat rate
+          </li>
+        </ul>
+
+        <h3>Order Processing</h3>
+        <p>
+          All orders are processed within one business day (Monday-Friday,
+          excluding holidays). Orders placed after 2:00 PM PST will be processed
+          the next business day. You will receive an email confirmation when
+          your order is placed, and another email with tracking information once
+          your order ships.
+        </p>
+
+        <h3>International Shipping</h3>
+        <p>We currently ship to the following countries and regions:</p>
+        <ul>
+          <li>Canada: 5-8 business days, $25 flat rate</li>
+          <li>
+            United Kingdom & European Union: 7-12 business days, $35 flat rate
+          </li>
+          <li>Australia & New Zealand: 10-15 business days, $45 flat rate</li>
+          <li>Japan & South Korea: 8-12 business days, $35 flat rate</li>
+        </ul>
+
+        <p>
+          International customers are responsible for any customs duties, taxes,
+          or fees imposed by their country. These charges are not included in
+          our shipping rates and vary by destination.
+        </p>
+
+        <h3>Tracking Your Order</h3>
+        <p>
+          Once your order ships, you'll receive a tracking number via email. You
+          can also track your order by logging into your account on our website.
+          If you don't receive tracking information within 2 business days of
+          placing your order, please contact customer service.
+        </p>
+
+        <h3>Delivery Issues</h3>
+        <p>
+          If your package shows as delivered but you haven't received it, please
+          check with neighbors and building management first. If you still can't
+          locate your package after 48 hours, contact us at
+          support@urbanstride.com. We'll work with the carrier to investigate
+          and will replace your order if it's confirmed lost.
+        </p>
+
+        <h3>Address Changes</h3>
+        <p>
+          We can modify shipping addresses only if your order hasn't shipped
+          yet. Contact us immediately if you need to change your delivery
+          address. Once a package is in transit, we cannot redirect it—you'll
+          need to work with the carrier directly or wait for delivery to the
+          original address.
+        </p>
+
+        <h3>Holidays</h3>
+        <p>
+          During peak holiday seasons (November-December), please allow an
+          additional 1-3 business days for processing and delivery. We recommend
+          ordering early to ensure delivery before specific dates. Holiday
+          shipping cutoff dates are posted on our website and social media
+          channels.
+        </p>
+      </div>
+    </section>
+
+    <!-- Returns & Refunds Policy -->
+    <section id="returns">
+      <div class="policy-content">
+        <h2>Returns & Refund Policy</h2>
+
+        <h3>Our Return Promise</h3>
+        <p>
+          We want you to absolutely love your UrbanStride shoes. If they're not
+          perfect for you, we offer a generous 60-day return window from the
+          delivery date. Returns are completely free for US customers, and we
+          make the process as simple as possible.
+        </p>
+
+        <h3>Return Eligibility</h3>
+        <p>To be eligible for a return, items must meet these conditions:</p>
+        <ul>
+          <li>Returned within 60 days of delivery</li>
+          <li>
+            Unworn with no signs of use (scuffs, creasing, dirt, or wear on
+            soles)
+          </li>
+          <li>Original box and all packaging materials included</li>
+          <li>All tags still attached</li>
+          <li>Original receipt or proof of purchase</li>
+        </ul>
+
+        <p>
+          <strong>Helpful tip:</strong> Try shoes on carpeted surfaces only to
+          preserve their pristine condition for returns.
+        </p>
+
+        <h3>How to Initiate a Return</h3>
+        <p>Returning your shoes is straightforward:</p>
+        <ul>
+          <li>
+            Log into your account at urbanstride.com and navigate to your order
+            history
+          </li>
+          <li>Select the order containing the item you wish to return</li>
+          <li>
+            Click "Initiate Return" and select your reason (optional but helpful
+            for us)
+          </li>
+          <li>
+            Print the prepaid return label that appears on screen (also emailed
+            to you)
+          </li>
+          <li>
+            Pack the shoes securely in the original box with all materials
+          </li>
+          <li>Affix the return label and drop off at any USPS location</li>
+        </ul>
+
+        <p>
+          Don't have access to a printer? Contact our customer service team and
+          we'll mail you a return label.
+        </p>
+
+        <h3>Refund Processing</h3>
+        <p>
+          Once we receive your return, our quality team inspects it within 2
+          business days. If everything looks good, we'll process your refund
+          immediately. Refunds are issued to your original payment method and
+          typically appear within 3-5 business days, depending on your bank or
+          credit card company.
+        </p>
+
+        <p>
+          You'll receive an email confirmation when your return is received and
+          again when your refund is processed.
+        </p>
+
+        <h3>Exchanges</h3>
+        <p>
+          While we don't offer direct exchanges, the process is simple: Return
+          your original pair for a full refund and place a new order for the
+          size or style you prefer. This ensures you get your new shoes as
+          quickly as possible rather than waiting for the return to process
+          first.
+        </p>
+
+        <p>
+          If you're unsure about sizing, our customer service team is available
+          via email, chat, or phone to help you find your perfect fit before
+          ordering.
+        </p>
+
+        <h3>International Returns</h3>
+        <p>
+          International customers are responsible for return shipping costs. We
+          recommend using a tracked shipping method. Once we receive and approve
+          your return, refunds are processed within 3-5 business days. Please
+          note that we cannot refund original shipping charges for international
+          orders, and any customs fees paid are non-refundable.
+        </p>
+
+        <h3>Damaged or Defective Items</h3>
+        <p>
+          If you receive a damaged or defective item, please contact us within 7
+          days of delivery. Email photos of the defect to
+          support@urbanstride.com along with your order number. We'll send a
+          replacement immediately at no charge, or process a full refund if you
+          prefer. You don't need to return defective items unless we request
+          them for quality analysis.
+        </p>
+
+        <h3>Final Sale Items</h3>
+        <p>
+          Items marked as "Final Sale" cannot be returned or exchanged. These
+          are clearly labeled at checkout. Final sale items are still covered
+          under our one-year Craftsmanship Guarantee for defects.
+        </p>
+
+        <h3>Return Abuse Policy</h3>
+        <p>
+          While we trust our customers, we reserve the right to refuse returns
+          or refunds if we detect fraudulent activity or excessive returns
+          (e.g., shoes worn and returned, serial returns after extended use).
+          Our goal is to protect the experience for our honest customers while
+          maintaining our generous return policy.
+        </p>
+
+        <h3>Questions?</h3>
+        <p>
+          If you have any questions about returns or need assistance, our
+          customer service team is here to help:
+        </p>
+        <ul>
+          <li>Email: support@urbanstride.com (response within 24 hours)</li>
+          <li>Chat: Available Monday-Friday, 9 AM - 6 PM PST</li>
+          <li>Phone: 1-800-STRIDE-1 (1-800-787-4331)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+        <div class="modal-grid">
+          <div class="modal-image" id="modalImage"></div>
+          <div class="modal-details" id="modalDetails"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>UrbanStride</h3>
+          <p>
+            Premium footwear for the modern professional. Crafted with purpose,
+            worn with pride.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Shop</h4>
+          <ul>
+            <li>
+              <a href="#" onclick="showSection('products')">All Products</a>
+            </li>
+            <li>
+              <a href="#" onclick="showSection('products')"
+                >Oxfords & Derbies</a
+              >
+            </li>
+            <li><a href="#" onclick="showSection('products')">Boots</a></li>
+            <li><a href="#" onclick="showSection('products')">Sneakers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#" onclick="showSection('story')">Our Story</a></li>
+            <li><a href="#" onclick="showSection('faq')">FAQ</a></li>
+            <li><a href="#" onclick="showSection('shipping')">Shipping</a></li>
+            <li><a href="#" onclick="showSection('returns')">Returns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">support@urbanstride.com</a></li>
+            <li><a href="#">1-800-STRIDE-1</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 UrbanStride. All rights reserved. Crafted in Portland,
+          Oregon.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Product data
+      const products = [
+        {
+          name: "The Meridian",
+          category: "Oxford Derby",
+          price: "$289.00",
+          description:
+            "The Meridian represents our commitment to timeless design with contemporary comfort. This full-grain Italian leather oxford features a sleek, elongated last that flatters the foot while maintaining all-day wearability.",
+          image: "Meridian",
+          specs: {
+            "Upper Material": "Full-grain Italian leather (Tuscan tannery)",
+            Lining: "Breathable calfskin",
+            Sole: "Leather with rubber heel tap",
+            Construction: "Blake stitch",
+            "Heel Height": "1 inch (25mm)",
+            Weight: "14 oz per shoe (size 9)",
+            "Available Sizes": "7-14 US (including half sizes)",
+            "Available Colors": "Black, Cognac, Dark Brown",
+          },
+          care: [
+            "Brush with horsehair brush after each wear",
+            "Condition with leather cream every 4-6 weeks",
+            "Use cedar shoe trees to maintain shape",
+            "Avoid excessive moisture; if wet, dry naturally at room temperature",
+            "Professional resoling recommended every 12-18 months with regular use",
+          ],
+        },
+        {
+          name: "The Atlas",
+          category: "Minimalist Sneaker",
+          price: "$198.00",
+          description:
+            "Clean lines meet premium materials in The Atlas. This minimalist sneaker proves that simplicity requires no compromise. Constructed from Italian canvas with vegetable-tanned leather accents, it's the rare sneaker that works equally well with tailored trousers and weekend denim.",
+          image: "Atlas",
+          specs: {
+            "Upper Material": "Italian canvas with premium leather overlays",
+            Lining: "Organic cotton terry cloth",
+            Sole: "Margom rubber cupsole (Italy)",
+            Insole: "Removable memory foam with arch support",
+            "Heel Height": "0.75 inches (19mm)",
+            Weight: "11 oz per shoe (size 9)",
+            "Available Sizes": "7-13 US (including half sizes)",
+            "Available Colors": "Off-White, Navy, Charcoal, Olive",
+          },
+          care: [
+            "Spot clean canvas with damp cloth and mild soap",
+            "Brush leather details with horsehair brush",
+            "Remove insoles to air dry after wear",
+            "Machine washing not recommended",
+            "Store in breathable shoe bag when not in use",
+          ],
+        },
+        {
+          name: "The Venture",
+          category: "Chelsea Boot",
+          price: "$345.00",
+          description:
+            "The Venture is our modern interpretation of the classic chelsea boot. Crafted from premium Portuguese suede and built on a Goodyear-welted construction, these boots are designed to develop character with age. The elastic gore panels are reinforced for durability while the streamlined silhouette maintains versatility across occasions.",
+          image: "Venture",
+          specs: {
+            "Upper Material": "Premium Portuguese suede",
+            Lining: "Full leather lining",
+            Sole: "Dainite rubber studded sole",
+            Construction: "Goodyear welt (resoleable)",
+            "Heel Height": "1.25 inches (32mm)",
+            Weight: "18 oz per boot (size 9)",
+            "Available Sizes": "7-14 US (including half sizes)",
+            "Available Colors": "Tobacco, Midnight Navy, Charcoal, Stone Gray",
+          },
+          care: [
+            "Brush regularly with suede brush to restore nap",
+            "Apply suede protector spray before first wear and monthly thereafter",
+            "Remove surface stains with suede eraser",
+            "Avoid prolonged exposure to water",
+            "Professional cleaning recommended for deep stains",
+            "Can be resoled by qualified cobbler",
+          ],
+        },
+        {
+          name: "The Tempo",
+          category: "Sport Trainer",
+          price: "$225.00",
+          description:
+            "Where performance meets style. The Tempo features our proprietary CloudStride cushioning system, combining responsive EVA foam with a TPU stability plate. Engineered mesh uppers provide breathability while reinforced heel counters ensure support. Perfect for active professionals who refuse to sacrifice style for function.",
+          image: "Tempo",
+          specs: {
+            "Upper Material": "Engineered mesh with synthetic overlays",
+            Lining: "Moisture-wicking mesh",
+            Sole: "EVA midsole with rubber outsole",
+            Insole: "CloudStride memory foam (removable)",
+            "Heel Height": "1.5 inches (38mm)",
+            Drop: "8mm heel-to-toe drop",
+            Weight: "10 oz per shoe (size 9)",
+            "Available Sizes": "7-14 US (including half sizes)",
+            "Available Colors": "Triple Black, White/Gray, Navy/Copper",
+          },
+          care: [
+            "Hand wash with mild detergent and cold water",
+            "Remove insoles and laces before washing",
+            "Air dry only - never use heat",
+            "Replace insoles every 6 months for optimal performance",
+            "Not suitable for machine washing or drying",
+          ],
+        },
+        {
+          name: "The Nomad",
+          category: "Desert Boot",
+          price: "$265.00",
+          description:
+            "Inspired by classic desert boots but refined for urban exploration. The Nomad features burnished full-grain leather that develops a unique patina over time. Vibram soles provide exceptional grip on varied terrain, while the unlined construction maintains breathability and flexibility. Built for those who wander with purpose.",
+          image: "Nomad",
+          specs: {
+            "Upper Material": "Burnished full-grain leather",
+            Lining: "Unlined (breathable)",
+            Sole: "Vibram Christy wedge sole",
+            Construction: "Storm welt (water resistant)",
+            "Heel Height": "1 inch (25mm)",
+            Weight: "16 oz per boot (size 9)",
+            "Available Sizes": "7-14 US (including half sizes)",
+            "Available Colors": "Sand, Bitter Chocolate, Olive",
+          },
+          care: [
+            "Brush to remove dirt and dust",
+            "Condition with leather cream or boot oil every 3-4 weeks",
+            "Water resistant but not waterproof - avoid deep puddles",
+            "Leather will darken slightly with conditioning, enhancing patina",
+            "Use boot trees or stuff with paper to maintain shape",
+            "Vibram soles extremely durable but can be replaced when worn",
+          ],
+        },
+        {
+          name: "The Horizon",
+          category: "Slip-On Loafer",
+          price: "$255.00",
+          description:
+            "Effortless elegance in butter-soft calfskin. The Horizon loafer combines continental styling with modern comfort innovations. Hand-stitched construction and a cushioned leather footbed ensure these break in beautifully while maintaining structural integrity. The perfect shoe for professionals who value ease without compromising polish.",
+          image: "Horizon",
+          specs: {
+            "Upper Material": "Butter-soft Italian calfskin",
+            Lining: "Full leather lining with padded collar",
+            Sole: "Leather sole with rubber forepart",
+            Construction: "Hand-stitched with blake-rapid construction",
+            "Heel Height": "0.75 inches (19mm)",
+            Weight: "12 oz per shoe (size 9)",
+            "Available Sizes": "7-14 US (including half sizes)",
+            "Available Colors": "Cognac, Black, Burgundy, Navy",
+          },
+          care: [
+            "Extremely soft leather requires gentle care",
+            "Brush with soft horsehair brush only",
+            "Condition monthly with premium leather cream",
+            "Avoid water exposure - leather will stain if wet",
+            "Use shoe horn to preserve heel counter",
+            "Cedar shoe trees essential to prevent creasing",
+            "Professional care recommended for deep cleaning",
+          ],
+        },
+      ];
+
+      // Navigation
+      function showSection(sectionId) {
+        document.querySelectorAll("section").forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.add("active");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+
+      // Product modal
+      function showProductDetail(index) {
+        const product = products[index];
+        const modal = document.getElementById("productModal");
+        const modalImage = document.getElementById("modalImage");
+        const modalDetails = document.getElementById("modalDetails");
+
+        modalImage.textContent = product.image;
+
+        let specsHTML = "";
+        for (const [key, value] of Object.entries(product.specs)) {
+          specsHTML += `
+                    <div class="spec-item">
+                        <span class="spec-label">${key}:</span>
+                        <span class="spec-value">${value}</span>
+                    </div>
+                `;
+        }
+
+        let careHTML = product.care.map((item) => `<li>${item}</li>`).join("");
+
+        modalDetails.innerHTML = `
+                <h2>${product.name}</h2>
+                <p class="product-category">${product.category}</p>
+                <p class="product-price">${product.price}</p>
+                <p style="margin-bottom: 2rem; line-height: 1.8; color: var(--deep-brown);">${product.description}</p>
+                
+                <div class="specs-section">
+                    <h4>Product Specifications</h4>
+                    ${specsHTML}
+                </div>
+                
+                <div class="care-instructions">
+                    <h4>Care Instructions</h4>
+                    <ul>${careHTML}</ul>
+                </div>
+            `;
+
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("productModal");
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      // Close modal on outside click
+      document
+        .getElementById("productModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeModal();
+          }
+        });
+
+      // Close modal on escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+    </script>
+    <script
+      src="http://localhost:3001/embed.global.js"
+      data-organization-id="org_39LYJDXD6kNSrnpljUjjJNkyXhr"
+      data-bot-id="j971k4nxnfn2s2ramfxe6ndw8980qk43"
+      data-position="bottom-right"
+      async
+    ></script>
+  </body>
+</html>
